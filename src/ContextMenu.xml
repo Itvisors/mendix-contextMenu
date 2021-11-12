@@ -8,9 +8,13 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="content" type="widgets" required="false">
+                <caption>Mendix content that can be right-clicked</caption>
+                <description>Widgets to place inside.</description>
+            </property>
+            <property key="clickContent" type="widgets" required="false">
+                <caption>Content to show after right-click</caption>
+                <description>Widgets to place inside.</description>
             </property>
         </propertyGroup>
     </properties>
