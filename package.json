@@ -22,7 +22,7 @@
     "prerelease": "npm run lint",
     "release": "pluggable-widgets-tools release:web"
   },
-  "license": "Apache v2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": "^9.0.0"
   },
