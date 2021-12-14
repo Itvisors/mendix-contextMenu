@@ -1,6 +1,16 @@
 /*
 Place your custom CSS here
 */
-.widget-hello-world {
+.customClose {
+    font-size: 18px;
+    color: #0a1325;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
 
+.customContextInfo {
+    position: absolute;
+    border: 1px solid #ced0d3;
+    z-index: 200;
 }

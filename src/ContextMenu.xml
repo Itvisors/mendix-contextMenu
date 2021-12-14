@@ -8,6 +8,34 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
+            <property key="closeOnClickOutside" type="boolean" required="true" defaultValue="true">
+                <caption>Close on click outside</caption>
+                <description>Whether or not to close the context div when the user clicked anywhere else on the page.</description>
+            </property>
+            <property key="closeOnClickContextDiv" type="boolean" required="true" defaultValue="false">
+                <caption>Close on click context</caption>
+                <description>Whether or not to close the context div when the context div is clicked</description>
+            </property>
+            <property key="isOpenAttribute" type="attribute" required="false">
+                <caption>Is open attribute</caption>
+                <description>Attribute where is stored whether the context div is open (true) or closed (false). Works two ways: widget will change this boolean when opened/closed or you can change this calue to open/close the context div.
+                Make sure the user has write access.</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="styleAsCard" type="boolean" required="true" defaultValue="true">
+                <caption>Show on top</caption>
+                <description>Set to true to use default card styling and show on top of other content.</description>
+            </property>
+            <property key="showCloseButton" type="boolean" required="true" defaultValue="true">
+                <caption>Close button</caption>
+                <description>Whether or not to show a close button in the right top.</description>
+            </property>
+            <property key="openWhereClicked" type="boolean" required="true" defaultValue="false">
+                <caption>Show Where clicked</caption>
+                <description>Set to true to open the context menu on the place you clicked</description>
+            </property>
             <property key="content" type="widgets" required="false">
                 <caption>Mendix content that can be right-clicked</caption>
                 <description>Widgets to place inside.</description>
@@ -15,6 +43,16 @@
             <property key="clickContent" type="widgets" required="false">
                 <caption>Content to show after right-click</caption>
                 <description>Widgets to place inside.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <property key="onOpenAction" type="action" required="false">
+                <caption>On Open Action</caption>
+                <description>Action to trigger when the context div is opened.</description>
+            </property>
+            <property key="onCloseAction" type="action" required="false">
+                <caption>On Close Action</caption>
+                <description>Action to trigger when the context div is closed.</description>
             </property>
         </propertyGroup>
     </properties>
