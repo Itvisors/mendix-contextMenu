@@ -1,24 +1,13 @@
 ## ContextMenu
-[Widget used to add a context menu to mendix content]
+Widget used to add a context menu / show extra information for mendix content
 
 ## Features
-[feature highlights]
+- Show extra information / context menu on right click
+- Possibility to close when clicked outside
+- Possibility to add close button
+- Use attribute to determine whether the context is open or closed
+- Call action when open or closed
 
 ## Usage
-[step by step instructions]
+Place the widget on a page. In the top part of the widget, configure the content to be shown that can be right clicked. In the bottom part, configure the information to be shown when right clicked. Configure the properties as desired.
 
-## Demo project
-[link to sandbox]
-
-## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
