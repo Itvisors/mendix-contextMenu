@@ -27,9 +27,10 @@ public class Microflows
 		IMendixObject result = (IMendixObject)Core.microflowCall("MyFirstModule.DS_ContextMenu").withParams(params).execute(context);
 		return result == null ? null : myfirstmodule.proxies.ContextMenu.initialize(context, result);
 	}
-	public static java.util.List<myfirstmodule.proxies.Item> dS_ItemList(IContext context)
+	public static java.util.List<myfirstmodule.proxies.Item> dS_ItemList(IContext context, myfirstmodule.proxies.ContextMenu _contextMenu)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("ContextMenu", _contextMenu == null ? null : _contextMenu.getMendixObject());
 		java.util.List<IMendixObject> objs = Core.microflowCall("MyFirstModule.DS_ItemList").withParams(params).execute(context);
 		java.util.List<myfirstmodule.proxies.Item> result = null;
 		if (objs != null)

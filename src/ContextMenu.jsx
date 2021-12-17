@@ -27,7 +27,7 @@ export default class ContextMenu extends Component {
     componentDidUpdate(prevProps) {
         // IsOpenAttribute can be changed outside of the widget
         if (this.props.isOpenAttribute !== prevProps.isOpenAttribute) {
-            this.setState({ showContent: this.props.isOpenAttribute });
+            this.setState({ showContent: this.props.isOpenAttribute.value });
         }
     }
 
@@ -80,10 +80,6 @@ export default class ContextMenu extends Component {
 
     render() {
         const onClickContextDiv = this.props.closeOnClickContextDiv ? this.closeContextDiv : undefined;
-        let className = "customContextInfo";
-        if (this.props.styleAsCard) {
-            className += " card customContextInfoAsCard";
-        }
         let style = {};
         if (this.props.openWhereClicked) {
             // Position is based on target div
@@ -95,7 +91,12 @@ export default class ContextMenu extends Component {
                     {this.props.content}
                 </div>
                 {this.state.showContent ? (
-                    <div ref={this.contextMenuRef} onClick={onClickContextDiv} className={className} style={style}>
+                    <div
+                        ref={this.contextMenuRef}
+                        onClick={onClickContextDiv}
+                        className="customContextInfo card"
+                        style={style}
+                    >
                         {this.props.clickContent}
                         {this.props.showCloseButton ? (
                             <button onClick={this.closeContextDiv} className="customClose close">

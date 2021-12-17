@@ -15,6 +15,28 @@ public class Item
 	 */
 	public static final java.lang.String entityName = "MyFirstModule.Item";
 
+	/**
+	 * Enum describing members of this entity
+	 */
+	public enum MemberNames
+	{
+		Title("Title"),
+		Item_ContextMenu("MyFirstModule.Item_ContextMenu");
+
+		private java.lang.String metaName;
+
+		MemberNames(java.lang.String s)
+		{
+			metaName = s;
+		}
+
+		@java.lang.Override
+		public java.lang.String toString()
+		{
+			return metaName;
+		}
+	}
+
 	public Item(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.Item"));
@@ -94,6 +116,85 @@ public class Item
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
+	/**
+	 * @return value of Title
+	 */
+	public final java.lang.String getTitle()
+	{
+		return getTitle(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Title
+	 */
+	public final java.lang.String getTitle(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Title.toString());
+	}
+
+	/**
+	 * Set value of Title
+	 * @param title
+	 */
+	public final void setTitle(java.lang.String title)
+	{
+		setTitle(getContext(), title);
+	}
+
+	/**
+	 * Set value of Title
+	 * @param context
+	 * @param title
+	 */
+	public final void setTitle(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String title)
+	{
+		getMendixObject().setValue(context, MemberNames.Title.toString(), title);
+	}
+
+	/**
+	 * @return value of Item_ContextMenu
+	 */
+	public final myfirstmodule.proxies.ContextMenu getItem_ContextMenu() throws com.mendix.core.CoreException
+	{
+		return getItem_ContextMenu(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Item_ContextMenu
+	 */
+	public final myfirstmodule.proxies.ContextMenu getItem_ContextMenu(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		myfirstmodule.proxies.ContextMenu result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Item_ContextMenu.toString());
+		if (identifier != null)
+			result = myfirstmodule.proxies.ContextMenu.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of Item_ContextMenu
+	 * @param item_contextmenu
+	 */
+	public final void setItem_ContextMenu(myfirstmodule.proxies.ContextMenu item_contextmenu)
+	{
+		setItem_ContextMenu(getContext(), item_contextmenu);
+	}
+
+	/**
+	 * Set value of Item_ContextMenu
+	 * @param context
+	 * @param item_contextmenu
+	 */
+	public final void setItem_ContextMenu(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.ContextMenu item_contextmenu)
+	{
+		if (item_contextmenu == null)
+			getMendixObject().setValue(context, MemberNames.Item_ContextMenu.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.Item_ContextMenu.toString(), item_contextmenu.getMendixObject().getId());
+	}
+
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */

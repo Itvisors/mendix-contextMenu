@@ -7,14 +7,14 @@
     <description>Widget used to add a context menu to mendix content</description>
     <icon/>
     <properties>
-        <propertyGroup caption="General">
+        <propertyGroup caption="Behavior">
             <property key="closeOnClickOutside" type="boolean" required="true" defaultValue="true">
                 <caption>Close on click outside</caption>
                 <description>Whether or not to close the context div when the user clicked anywhere else on the page.</description>
             </property>
             <property key="closeOnClickContextDiv" type="boolean" required="true" defaultValue="false">
                 <caption>Close on click context</caption>
-                <description>Whether or not to close the context div when the context div is clicked</description>
+                <description>Whether or not to close the context div when the context div is clicked.</description>
             </property>
             <property key="isOpenAttribute" type="attribute" required="false">
                 <caption>Is open attribute</caption>
@@ -24,17 +24,13 @@
                     <attributeType name="Boolean"/>
                 </attributeTypes>
             </property>
-            <property key="styleAsCard" type="boolean" required="true" defaultValue="true">
-                <caption>Show on top</caption>
-                <description>Set to true to use default card styling and show on top of other content.</description>
-            </property>
             <property key="showCloseButton" type="boolean" required="true" defaultValue="true">
                 <caption>Close button</caption>
                 <description>Whether or not to show a close button in the right top.</description>
             </property>
             <property key="openWhereClicked" type="boolean" required="true" defaultValue="false">
                 <caption>Show Where clicked</caption>
-                <description>Set to true to open the context menu on the place you clicked</description>
+                <description>Set to true to open the context menu on the place you clicked.</description>
             </property>
             <property key="content" type="widgets" required="false">
                 <caption>Mendix content that can be right-clicked</caption>
@@ -48,11 +44,11 @@
         <propertyGroup caption="Events">
             <property key="onOpenAction" type="action" required="false">
                 <caption>On Open Action</caption>
-                <description>Action to trigger when the context div is opened.</description>
+                <description>Action to trigger when the content is right-clicked, which opens the context.</description>
             </property>
             <property key="onCloseAction" type="action" required="false">
                 <caption>On Close Action</caption>
-                <description>Action to trigger when the context div is closed.</description>
+                <description>Action to trigger when the context div is closed because of a click action.</description>
             </property>
         </propertyGroup>
     </properties>
