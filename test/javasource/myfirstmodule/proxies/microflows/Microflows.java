@@ -21,6 +21,20 @@ public class Microflows
 		params.put("ContextMenu", _contextMenu == null ? null : _contextMenu.getMendixObject());
 		Core.microflowCall("MyFirstModule.ACT_ContextMenu_ToggleIsOpen").withParams(params).execute(context);
 	}
+	public static void aCT_Item_Delete(IContext context, myfirstmodule.proxies.Item _item, myfirstmodule.proxies.ContextMenu _contextMenu)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("Item", _item == null ? null : _item.getMendixObject());
+		params.put("ContextMenu", _contextMenu == null ? null : _contextMenu.getMendixObject());
+		Core.microflowCall("MyFirstModule.ACT_Item_Delete").withParams(params).execute(context);
+	}
+	public static void aCT_Item_Edit(IContext context, myfirstmodule.proxies.Item _item, myfirstmodule.proxies.ContextMenu _contextMenu)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("Item", _item == null ? null : _item.getMendixObject());
+		params.put("ContextMenu", _contextMenu == null ? null : _contextMenu.getMendixObject());
+		Core.microflowCall("MyFirstModule.ACT_Item_Edit").withParams(params).execute(context);
+	}
 	public static myfirstmodule.proxies.ContextMenu dS_ContextMenu(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
