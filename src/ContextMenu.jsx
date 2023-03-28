@@ -80,6 +80,8 @@ export default class ContextMenu extends Component {
 
     render() {
         const onClickContextDiv = this.props.closeOnClickContextDiv ? this.closeContextDiv : undefined;
+        const widgetName = this.props.name || null;
+        const widgetStyle = this.props.class || null;
         let style = {};
         if (this.props.openWhereClicked) {
             // Position is based on target div
@@ -87,7 +89,11 @@ export default class ContextMenu extends Component {
         }
         return (
             <Fragment>
-                <div ref={this.componentRef} onContextMenu={e => this.showContextDiv(e)}>
+                <div
+                    ref={this.componentRef}
+                    className={`widget-contextmenu ${widgetName} ${widgetStyle}`}
+                    onContextMenu={e => this.showContextDiv(e)}
+                >
                     {this.props.content}
                 </div>
                 {this.state.showContent ? (
